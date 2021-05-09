@@ -48,4 +48,4 @@
    Input your aws region (ex: us-east-1)
   
 ### Installation
-* boto3
+
