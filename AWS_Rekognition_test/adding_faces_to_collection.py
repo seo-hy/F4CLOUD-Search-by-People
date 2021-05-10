@@ -1,5 +1,7 @@
-import boto3
+#Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+#PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
 
+import boto3
 
 def add_faces_to_collection(bucket, photo, collection_id):
     client = boto3.client('rekognition')
@@ -34,9 +36,9 @@ def add_faces_to_collection(bucket, photo, collection_id):
 
 def main():
     #bucket = '<bucket>'
-    bucket = 'f4cloudtest1'
-    collection_id = 'col_user01'
-    photo = 'user01/jo2.jpg'
+    bucket = '<bucket>'
+    collection_id = '<collection_id>'
+    photo = '<file_name>'
     indexed_faces_count = add_faces_to_collection(bucket, photo, collection_id)
     print("Faces indexed count: " + str(indexed_faces_count))
 

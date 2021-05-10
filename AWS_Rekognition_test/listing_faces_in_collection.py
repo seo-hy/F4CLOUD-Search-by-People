@@ -29,7 +29,7 @@ def list_faces_in_collection(collection_id):
 
 
 def main():
-    collection_id = 'col_user01'
+    collection_id = '<collection_id>'
 
     faces_count = list_faces_in_collection(collection_id)
     print("faces count: " + str(faces_count))

@@ -64,7 +64,7 @@ def upload_file(file_name, bucket, object_name=None):
     return True
 
 def main():
-    bucket_name = 'f4cloudtest1'
+    bucket_name = '<bucket>'
     file_name = '<file_name>'
     create_bucket(bucket_name)
 
