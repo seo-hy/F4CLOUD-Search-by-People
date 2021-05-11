@@ -1,6 +1,5 @@
 import boto3
 
-
 def search_face_using_face_id(faceId, collectionId):
     threshold = 90
     max_faces = 5 # max result number to find in a collection

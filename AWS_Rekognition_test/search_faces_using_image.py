@@ -1,4 +1,3 @@
-
 import boto3
 
 def search_faces_using_image(fileAddress, collectionId):
