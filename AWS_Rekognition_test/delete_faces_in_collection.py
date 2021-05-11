@@ -19,7 +19,7 @@ def main():
 
     collection_id='<collection_id>'
     faces=[]
-    faces.append("<face_id>")
+    faces.append("<face id>")
 
     faces_count=delete_faces_from_collection(collection_id, faces)
     print("deleted faces count: " + str(faces_count))
