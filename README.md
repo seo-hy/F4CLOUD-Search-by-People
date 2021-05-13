@@ -55,12 +55,10 @@
        pip install mysqlclient
        pip install pillow
        pip install requests
-      ```
+     ```
 
 
 n. Usage
-
-      ```
-         curl -d "{""file_id"":""<file_id>"", ""user_id"":""<user_id>""}" -H "Content-Type: application/json" -X POST http://localhost:8000/faces/
-      ```
-      
+```
+curl -d "{""file_id"":""<file_id>"", ""user_id"":""<user_id>""}" -H "Content-Type: application/json" -X POST http://localhost:8000/faces/      
+```
