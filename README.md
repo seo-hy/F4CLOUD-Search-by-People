@@ -11,7 +11,8 @@
       <li><a href="#installation">Installation</a></li>
     </ul>
   </li>
-  <li><a href="#usage">Usage</a></li>
+
+   <li><a href="#usage">Result</a></li>
   <li><a href="#license">License</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -19,7 +20,6 @@
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
 ### AWS Setting
 1. IAM Access
     * AmazonS3FullAccess
@@ -48,4 +48,19 @@
    Input your aws region (ex: us-east-1)
   
 ### Installation
+1. Install packages
+    ```sh
+       pip install django
+       pip install djangorestframework
+       pip install mysqlclient
+       pip install pillow
+       pip install requests
+      ```
 
+
+n. Usage
+
+      ```
+         curl -d "{""file_id"":""<file_id>"", ""user_id"":""<user_id>""}" -H "Content-Type: application/json" -X POST http://localhost:8000/faces/
+      ```
+      

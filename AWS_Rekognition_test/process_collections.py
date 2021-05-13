@@ -59,7 +59,7 @@ def delete_collection(collection_id):
 
 def main():
     #Create a collection
-    collection_id='<collection_id>'
+    collection_id = '<collection_id>'
     create_collection(collection_id)
 
     #List Collections
@@ -67,7 +67,6 @@ def main():
     #print("collections: " + str(collection_count))
 
     #Delete a collection
-    #collection_id = '<collection_id>'
     #status_code = delete_collection(collection_id)
     #print('Status code: ' + str(status_code))
 
