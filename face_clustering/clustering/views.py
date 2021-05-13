@@ -25,7 +25,9 @@ class faces(APIView):
             file_id = data['file_id']
             user_id = data['user_id']
             client = boto3.client('rekognition')
-            print(file_id,user_id)
+
+            #print(file_id,user_id)
+
             # get file address using file id
             file_address = FileInfo.objects.values('file_address').distinct().filter(file_id=file_id, user_id=user_id)
             serializer = AddFaceSerializer(file_address)
@@ -99,7 +101,7 @@ class faces(APIView):
                         print('New Person')
                         s3_client = boto3.client('s3')
 
-                        ## set initial name of new group
+                        # set initial name of new group
                         timestamp = datetime.now().strftime('%y%m%d%H%M%S')
                         group_name_prefix = user_id
                         new_group_id = group_name_prefix + timestamp
@@ -123,7 +125,7 @@ class faces(APIView):
 
                         url_gen = new_group_id + '.' + img_format
 
-                        s3_prefix = 'https://f4cloudtest1.s3.amazonaws.com/'
+                        s3_prefix = 'https://'+bucket+'/.s3.amazonaws.com/'
                         s3_client.upload_fileobj(
                             rep_img,
                             bucket,
