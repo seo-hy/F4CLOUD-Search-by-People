@@ -158,4 +158,4 @@ class faces(APIView):
                     for reason in unindexedFace['Reasons']:
                         print('   ' + reason)
 
-        return Response({'msg':'complete'})
+        return Response({'msg':'Complete'})
