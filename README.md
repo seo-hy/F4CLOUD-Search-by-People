@@ -21,6 +21,6 @@
       * 해당 Face가 속한 Face Group의 멤버가 없을 시 Face Group 삭제 
 8. Collection 삭제
          
-### Sample
+### Sample : Face Group
 ![KakaoTalk_20210521_000054973](https://user-images.githubusercontent.com/68395698/119002258-ae5ea200-b9c7-11eb-80bc-155df0218856.gif)
 
