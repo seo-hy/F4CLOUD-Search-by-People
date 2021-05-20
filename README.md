@@ -11,7 +11,7 @@
 2. Face 추가
       * 사진 속 얼굴 추출 후 Face Id 생성
       * 존재하는 Face -> Face Group 지정
-      * 새로운 Face -> 새로운 Face Group 생성 후 지정
+      * 새로운 Face -> Face Group 생성 후 지정
 3. 전체 Face Group 리스트
 4. 특정 Face Group 멤버 리스트 
 5. 특정 Face Group의 display name 설정
