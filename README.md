@@ -16,5 +16,5 @@
 5. 사진 삭제
          
 ### Sample
-![KakaoTalk_20210520_234635872](https://user-images.githubusercontent.com/68395698/119000025-b3225680-b9c5-11eb-8486-027895139fea.gif)
+![KakaoTalk_20210521_000054973](https://user-images.githubusercontent.com/68395698/119002258-ae5ea200-b9c7-11eb-80bc-155df0218856.gif)
 
