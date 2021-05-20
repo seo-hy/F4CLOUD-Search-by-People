@@ -19,3 +19,10 @@
 ### Sample
 ![KakaoTalk_20210521_000054973](https://user-images.githubusercontent.com/68395698/119002258-ae5ea200-b9c7-11eb-80bc-155df0218856.gif)
 
+* 여러 사진을 업로드 한 결과
+
+![image](https://user-images.githubusercontent.com/68395698/119005936-e0bdce80-b9ca-11eb-9cbd-9d7d8fdd4a73.png)
+
+* 새로운 사진 추가
+
+![sh1](https://user-images.githubusercontent.com/68395698/119005916-d8fe2a00-b9ca-11eb-9200-8eaae0747415.jpg)
