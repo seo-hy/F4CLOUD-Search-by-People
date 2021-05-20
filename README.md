@@ -15,8 +15,9 @@
 3. 전체 Face Group 리스트
 4. 특정 Face Group 멤버 리스트 
 5. 특정 Face Group의 display name 설정
-6. 인물 검색      
-7. Face 삭제
+6. 인물 검색
+      * display name 검색      
+8. Face 삭제
       * 해당 Face가 속한 Face Group의 멤버가 없을 시 Face Group 삭제 
          
 ### Sample
