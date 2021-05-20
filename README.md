@@ -8,7 +8,7 @@
 ###  API Usage
 1. Collection 생성
       * AWS Rekognition Collection 생성
-2. Face 업로드
+2. Face 추가
       * 사진 속 얼굴 추출 후 Face Id 생성, Face Group 지정
 3. 전체 Face Group 리스트
 4. 특정 Face Group 멤버 리스트 
