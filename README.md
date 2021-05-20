@@ -27,6 +27,9 @@
 <img width="200" hight="210" src="https://user-images.githubusercontent.com/68395698/119005916-d8fe2a00-b9ca-11eb-9200-8eaae0747415.jpg">
 
 ![image](https://user-images.githubusercontent.com/68395698/119006548-72c5d700-b9cb-11eb-8636-f65841008a2d.png)
+
+* Face Group 멤버 확인
+
 ![image](https://user-images.githubusercontent.com/68395698/119006627-7fe2c600-b9cb-11eb-9609-70f70fde400b.png)
 
 * 해당 사진 삭제
