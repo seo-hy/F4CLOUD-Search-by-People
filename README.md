@@ -24,7 +24,7 @@
 ![image](https://user-images.githubusercontent.com/68395698/119005936-e0bdce80-b9ca-11eb-9cbd-9d7d8fdd4a73.png)
 
 * 새로운 사진 추가
-<img width="200" src="https://user-images.githubusercontent.com/68395698/119005916-d8fe2a00-b9ca-11eb-9200-8eaae0747415.jpg">
+<img width="200" hight="210" src="https://user-images.githubusercontent.com/68395698/119005916-d8fe2a00-b9ca-11eb-9200-8eaae0747415.jpg">
 
 ![image](https://user-images.githubusercontent.com/68395698/119006548-72c5d700-b9cb-11eb-8636-f65841008a2d.png)
 ![image](https://user-images.githubusercontent.com/68395698/119006627-7fe2c600-b9cb-11eb-9609-70f70fde400b.png)
