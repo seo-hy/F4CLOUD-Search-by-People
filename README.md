@@ -1,3 +1,4 @@
+
 ## F4CLOUD : 사진에서 인물 검색
 
 ### AWS - IAM Access
@@ -15,7 +16,5 @@
 5. 사진 삭제
          
 ### Demo
+![KakaoTalk_20210520_234635872](https://user-images.githubusercontent.com/68395698/119000025-b3225680-b9c5-11eb-8486-027895139fea.gif)
 
-![image](https://user-images.githubusercontent.com/68395698/118997078-56be3780-b9c3-11eb-8cdc-77b1d3e2eb88.png)
-![image](https://user-images.githubusercontent.com/68395698/118997160-676ead80-b9c3-11eb-8966-da7e7c9e25d4.png)
-![image](https://user-images.githubusercontent.com/68395698/118997192-6d648e80-b9c3-11eb-8bba-837ddb67b919.png)
