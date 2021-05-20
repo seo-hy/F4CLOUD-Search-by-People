@@ -8,7 +8,7 @@ from f4people.models import GroupInfo
 from f4people.serializers import AddFaceSerializer
 from f4people.serializers import GroupListSerializer
 from f4people.serializers import GroupDetailSerializer
-from django.http import Http404
+from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -33,11 +33,12 @@ class collections(APIView):
                 print('Collection ARN: ' + response['CollectionArn'])
                 print('Status code: ' + str(response['StatusCode']))
                 print('Done...')
-                return Response({'msg': 'Complete Creating a Collection'})
+                msg = {'msg' : ' Create collection '+str(collection_id)}
+                return Response(msg,status=status.HTTP_200_OK)
             except Exception as e:
-                msg = "{'msg' : '" + str(e) + "'}"
+                msg = {'error' : str(e) }
                 print(msg)
-                return Response(msg)
+                return Response(msg, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request):
         if request.method == "DELETE":
@@ -53,11 +54,12 @@ class collections(APIView):
                 status_code = response['StatusCode']
                 FaceInfo.objects.filter(user_id='user_test').delete()
                 GroupInfo.objects.filter(user_id='user_test').delete()
-                return Response({'msg': 'Complete Deleting a Collection'})
+                msg = {'msg': ' Delete collection ' + str(collection_id)}
+                return Response(msg, status=status.HTTP_200_OK)
             except Exception as e:
-                msg = "{'msg' : '"+str(e)+"'}"
+                msg = {'error': str(e)}
                 print(msg)
-                return Response(msg)
+                return Response(msg, status=status.HTTP_400_BAD_REQUEST)
 
 
 class faces(APIView):
@@ -119,7 +121,7 @@ class faces(APIView):
                 if (len(face_records) == 0):
                     # case1 : There is no person in this image
                     print('No Person in Photo')
-                    msg = 'No Person in Photo'
+                    msg = {'msg' : 'No Person in Photo'}
                 else:
                     print('Faces indexed:')
                     for faceRecord in face_records:
@@ -153,7 +155,7 @@ class faces(APIView):
                             group_id=group_id[0]['group_id']
                             add_new_face = FaceInfo.objects.create(face_id=face_id, group_id=group_id,
                                                                    user_id=user_id, file_id=file_id)
-                            msg = 'Add to group '+str(group_id)
+                            msg = {'msg': 'Add to group '+str(group_id)}
                         elif (len(face_matches) == 0):
                             # case2-1 : There is no same person in collection
                             print('New Person')
@@ -200,7 +202,7 @@ class faces(APIView):
                             rep_fileid = file_id
                             rep_faceid = face_id
                             create_group = GroupInfo.objects.create(group_id = new_group_id, user_id=user_id,rep_faceid=rep_faceid,rep_fileid=rep_fileid, rep_faceaddress=rep_faceaddress)
-                            msg = 'Create new group ' + str(new_group_id)
+                            msg = {'msg':'Create new group ' + str(new_group_id)}
                         else:
                             # case2-2 : There is same person in collection
                             print('add into existing group')
@@ -221,7 +223,9 @@ class faces(APIView):
                             response = client.delete_faces(CollectionId=collection_id,
                                                            FaceIds=del_faces)
                             print(str(len(response['DeletedFaces'])) + ' faces deleted:')
-                            msg = 'Add to group ' + str(group_id)
+
+                            msg = {'msg': 'Add to group ' + str(group_id)}
+
 
                 '''if (len(unindex_faces) != 0):
                     print('Faces not indexed:')
@@ -230,24 +234,22 @@ class faces(APIView):
                         print(' Reasons:')
                         for reason in unindexedFace['Reasons']:
                             print('   ' + reason)'''
-            except IOError as e:
+                ''' except IOError as e:
                 print(e)
                 return Response({'msg':'Not Image File'})
             except IndexError as e:
                 print(e)
-                return Response({'msg':'parameter error'})
+                return Response({'msg':'parameter error'})'''
             except Exception as e:
-                msg = "{'msg' : '" + str(e) + "'}"
+                msg = {'msg' : str(e) }
                 print(msg)
-                return Response(msg)
-
-        return Response({'msg':msg})
+                return Response(msg,status=status.HTTP_400_BAD_REQUEST)
+            return Response(msg,status=status.HTTP_200_OK)
 
     def delete(self, request):
         if request.method == 'DELETE':
             try:
                 data = request.data
-
                 file_id = data['fileId']
                 user_id = data['userId']
                 client = boto3.client('rekognition')
@@ -255,9 +257,10 @@ class faces(APIView):
                 collection_id = collection_id[0]['collection_id']
                 #print('Creating collection:' + collection_id)
                 faces= FaceInfo.objects.values('face_id').distinct().filter(user_id=user_id,file_id=file_id)
-                print('faces : ' + str(faces))
+                #print('faces : ' + str(faces))
                 if len(faces)==0:
-                    return Response({'msg':'no person'})
+                    msg = {'msg':'There is no face id about this file '}
+                    return Response(msg, status=status.HTTP_200_OK)
                 for faceId in faces:
                     face_id = faceId['face_id']
                     # check if this face id is rep_face id
@@ -295,11 +298,11 @@ class faces(APIView):
                         for faceId in response['DeletedFaces']:
                             print(faceId)
 
-                return Response({'msg': 'complete'})
+                return Response({'msg': 'complete'},status=status.HTTP_200_OK)
             except Exception as e:
-                msg = "{'msg' : '" + str(e) + "'}"
-                print(msg)
-                return Response(msg)
+                msg = {'msg' : str(e) }
+                #print(msg)
+                return Response(msg,status=status.HTTP_400_BAD_REQUEST)
 
 class groups(APIView):
     def get(self, request):
@@ -308,11 +311,11 @@ class groups(APIView):
                 user_id = request.GET['userId']
                 res = GroupInfo.objects.values().filter(user_id=user_id)
                 serializer = GroupListSerializer(res, many=True)
-                return Response(serializer.data)
+                return Response(serializer.data,status = status.HTTP_200_OK)
             except Exception as e:
-                msg = "{'msg' : " + str(e) + "}"
+                msg = {'msg' :  str(e) }
                 print(e)
-                return Response(msg)
+                return Response(msg,status=status.HTTP_400_BAD_REQUEST)
     def put(self, request):
         if request.method == 'PUT':
             try:
@@ -322,11 +325,11 @@ class groups(APIView):
                 display_name = data['displayName']
                 item = GroupInfo.objects.filter(user_id=user_id, group_id=group_id)
                 item.update(display_name = display_name)
-                return Response({'msg':'complete'})
+                return Response({'msg':'complete'},status=status.HTTP_200_OK)
             except Exception as e:
-                msg = "{'msg' : " + str(e) + "}"
+                msg = {'msg' :str(e)}
                 print(e)
-                return Response(msg)
+                return Response(msg,status=status.HTTP_400_BAD_REQUEST)
 
 class group_detail(APIView):
     def get(self, request):
@@ -343,11 +346,11 @@ class group_detail(APIView):
                     res.append(item[0])
                 print(res)
                 serializer = GroupDetailSerializer(res, many=True)
-                return Response(serializer.data)
+                return Response(serializer.data,status=status.HTTP_200_OK)
             except Exception as e:
-                msg = "{'msg' : " + str(e) + "}"
+                msg = {'msg' : str(e) }
                 print(e)
-                return Response(msg)
+                return Response(msg,status=status.HTTP_400_BAD_REQUEST)
 
 class search_group(APIView):
     def get(self, request):
@@ -369,11 +372,11 @@ class search_group(APIView):
                         item = FileInfo.objects.values().filter(file_id=file_id, user_id=user_id)
                         res.append(item[0])
                 serializer = GroupDetailSerializer(res, many=True)
-                return Response(res)
+                return Response(res,status=status.HTTP_200_OK)
             except Exception as e:
-                msg = "{'msg' : " + str(e) + "}"
+                msg = {'msg' : str(e) }
                 print(e)
-                return Response(msg)
+                return Response(msg,status=status.HTTP_400_BAD_REQUEST)
 
 
 
