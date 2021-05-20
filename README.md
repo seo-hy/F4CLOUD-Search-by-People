@@ -9,7 +9,7 @@
 1. Collection 생성
       * AWS Rekognition Collection 생성
 2. Face 추가
-      * 사진 속 얼굴 추출 후 Face Id 생성
+      * 사진 속 얼굴 추출 후 Face Id 생성, 유사도 테스트
       * 존재하는 Face -> Face Group 지정
       * 새로운 Face -> Face Group 생성 후 지정
 3. 전체 Face Group 리스트
