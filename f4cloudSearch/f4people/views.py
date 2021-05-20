@@ -360,7 +360,7 @@ class search_group(APIView):
                 user_id = request.GET['userId']
                 group_name = request.GET['groupName']
                 print(group_name)
-                groups = GroupInfo.objects.values('group_id').distinct().filter(display_name=group_name, user_id=user_id)
+                groups = GroupInfo.objects.values('group_id').distinct().filter(display_name__contains=group_name, user_id=user_id)
                 print(groups)
                 for group_id in groups:
                     group_id = group_id['group_id']
