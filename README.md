@@ -15,8 +15,8 @@
 * Add faces
    * Create face Id after extracting faces from photos
    * Test similarity
-   * Existing face -> Set face group
-   * New face -> Create face group and set
+   * Existing face -> Add to face group
+   * New face -> Create new face group
 * List all face groups
 * List members of the face group 
 * Set display name of the face group
