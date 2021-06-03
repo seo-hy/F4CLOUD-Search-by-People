@@ -6,7 +6,7 @@
    -  AmazonRekognitionFullAccess
 
 ### Implementation
-![image](https://user-images.githubusercontent.com/68395698/120573645-dedb1d00-c458-11eb-853e-0b78f7904236.png)
+![image](https://user-images.githubusercontent.com/68395698/120574037-85272280-c459-11eb-8000-a83762a292d7.png)
 
 
 ###  API
