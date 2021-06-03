@@ -5,7 +5,11 @@
    -  AmazonS3FullAccess
    -  AmazonRekognitionFullAccess
 
-###  API Usage
+### Implementation
+![image](https://user-images.githubusercontent.com/68395698/120573645-dedb1d00-c458-11eb-853e-0b78f7904236.png)
+
+
+###  API
 * Create collection
    * Create AWS Rekognition Collection
 * Add faces
