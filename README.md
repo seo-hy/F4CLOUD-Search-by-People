@@ -26,6 +26,6 @@
    * Delete the face group if there is no member of the face group to which it belongs 
 * Delete collection
          
-### Sample : Face Group
+### Sample : Face Group List and Detail
 ![KakaoTalk_20210521_000054973](https://user-images.githubusercontent.com/68395698/119002258-ae5ea200-b9c7-11eb-80bc-155df0218856.gif)
 
