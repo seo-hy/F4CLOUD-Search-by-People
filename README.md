@@ -6,8 +6,7 @@
    -  AmazonRekognitionFullAccess
 
 ### Implementation
-![image](https://user-images.githubusercontent.com/68395698/120602165-b74e7980-c485-11eb-84df-279e157cd0cd.png)
-
+![image](https://user-images.githubusercontent.com/68395698/120728514-0e049380-c518-11eb-8faa-792f752536c5.png)
 ###  API
 * Create collection
    * Create AWS Rekognition Collection
