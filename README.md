@@ -29,7 +29,7 @@
 
 
 ### Sample2 : Upload and Delete
-1. I'm going to upload these two images
+1. For example, upload these two images
 
 ![test](https://user-images.githubusercontent.com/68395698/120960103-1ec23d00-c796-11eb-890a-9f32acee6308.png)
 
